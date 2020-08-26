@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+		<h1>CHECK URL BEFORE BROWSING</h1>
+		
+		<!--<div id="main">-->
+		  
+		  <div id="check">
+			<form method="post" action="/predict">
+				<input type="text" name="url" placeholder="Enter Full URL" class="search_bar" required>
+				<input type="submit" value="Check" class="search_submit">
+			</form>
+			<span class="info">ex. https://www.example.com/</span>
+		 </div>
+		<!--</div>-->
+		
+		<div class="loader">
+			<div class="check">
+			  <span class="check-one"></span>
+			  <span class="check-two"></span>
+			</div>
+		</div>
+  
+	  <br>
+	  <br>
+	  <div id="ans">
+	   {{ prediction_text }}
+	  </div>
+	  <script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+		  var btn = document.querySelector('.search_submit'),
+			  loader = document.querySelector('.loader'),
+			  check = document.querySelector('.check');
+		  
+		  btn.addEventListener('click', function () {
+			loader.classList.add('active');    
+		  });
+		 
+		  loader.addEventListener('animationend', function() {
+			check.classList.add('active'); 
+		  });
+		});
+
+	  </script>
+  </body>
+</html>
