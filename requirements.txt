@@ -11,3 +11,5 @@ scipy==1.2.1
 Werkzeug==0.14.1
 pickleshare==0.7.5
 beautifulsoup4==4.7.1
+google==3.0.0
+lxml==4.3.2
