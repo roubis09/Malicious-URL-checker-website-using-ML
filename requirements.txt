@@ -10,3 +10,4 @@ scikit-learn==0.20.3
 scipy==1.2.1
 Werkzeug==0.14.1
 pickleshare==0.7.5
+beautifulsoup4==4.7.1
