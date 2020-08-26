@@ -13,3 +13,4 @@ pickleshare==0.7.5
 beautifulsoup4==4.7.1
 google==3.0.0
 lxml==4.3.2
+python-whois==0.7.3
