@@ -196,7 +196,7 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    site = request.form.get('url')
+    site = request.form.get('url').strip()
     
     if 'http' not in site:
         output= 'Please Enter Full URL with http or https'
