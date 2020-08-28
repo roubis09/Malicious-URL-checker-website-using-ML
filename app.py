@@ -198,7 +198,7 @@ def predict():
     '''
     site = request.form.get('url').strip()
     
-    if 'http' not in site:
+    if 'http' not in site[:5]:
         output= 'Please Enter Full URL with http or https'
     else:
         prediction = model.predict([website(site)])
