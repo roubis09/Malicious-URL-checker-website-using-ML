@@ -198,11 +198,14 @@ def predict():
     '''
     site = request.form.get('url').strip()
     
-    if 'http' not in site[:5]:
+    if 'http' not in site[:4]:
         output= 'Please Enter Full URL with http or https'
     else:
-        prediction = model.predict([website(site)])
-        if str(prediction[0])=='good':
+        output1= website(site)
+        prediction = model.predict([output1])
+        if output1[6] == 1:
+            output= "Beware of these type of shortened urls"
+        elif str(prediction[0])=='good':
             output= 'The Site is SAFE'
         else:
             output= 'The Site is suspicious. Beware of this site'
