@@ -203,7 +203,7 @@ def predict():
     else:
         output1= website(site)
         prediction = model.predict([output1])
-        if output1[6] == 1:
+        if output1[6] == 3:
             output= "Beware of these type of shortened urls"
         elif str(prediction[0])=='good':
             output= 'The Site is SAFE'
